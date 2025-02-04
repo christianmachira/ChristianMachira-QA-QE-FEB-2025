@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display:flex;
+        flex-direction:column;
+        width: 100vh;
+        height:100vh;
+        background-color:hsl(0, 0%, 98%);
+        font-family:"Epilogue", serif;
+        font-weight: 400;
+        font-size: 14px;
+
+    }
+    header{
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items:center;
+        font-family:"Epilogue", serif;
+        font-weight: 400;
+        font-size: 14px;
+
+    }
+    .logo h1{
+        font-size: 30px;
+        margin-left: 20px;
+    }
+    .navbar{
+        display:flex;
+        width:70%;
+        flex-direction:row;
+        margin-left:20px;
+        float:left;
+        overflow:hidden;
+        justify-content:flex-start;
+
+    }
+    .navbar button{
+        width: 80px;
+        height: 50px;
+        margin:5px;
+        background:none;
+        border:none;
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+        align-items:center;
+    }
+    .navbar button:hover{
+        border:2px solid black;
+        border-radius: 10px;
+        color:hsl(0, 0%, 8%);
+        cursor:pointer;
+    }
+    .features{
+        display:flex;
+        flex-direction:row;
+        float: left;
+        justify-content:space-between;
+        overflow:hidden;
+    }
+    .company{
+        display:flex;
+        flex-direction:row;
+        float: left;
+        justify-content:space-between;
+        overflow:hidden;
+    }
+     .dropdown-content{
+        display:none;
+        position:absolute;
+        background-color:hsl(0, 0%, 100%);
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index:1;
+        border-radius:15px;
+    }
+    .dropdown-content a{
+        float:none;
+        display:block;
+        padding: 15px 15px;
+        color:black;
+        text-align:center;
+        font-size: 12px;
+    }
+    .dropdown-content-2{
+        display:none;
+        position:absolute;
+        background-color:hsl(0, 0%, 100%);
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        border-radius:15px;
+        z-index:1;
+    }
+    .dropdown-content-2 a{
+        float:none;
+        display:block;
+        padding: 15px 15px;
+        color:black;
+        font-size:12px;
+        text-align:center;
+    }
+    .dropdown-content a:hover{
+        background:hsl(0, 0%, 100%);
+    }
+    .features:hover .dropdown-content{
+        display:block;
+    }
+    .dropdown-content-2 a:hover{
+        background:hsl(0, 0%, 100%);
+    }
+    .company:hover .dropdown-content-2{
+        display:block;
+    }
+    .account{
+        float:right;
+        flex-direction:row;
+        width:30%;
+        margin-left: 220px;
+        justify-content:space-between
+    }
+    .account button{
+        width: 80px;
+        height: 50px;
+        background:none;
+        border:none;
+        flex-direction:row;
+        justify-content: center;
+        align-items:center;
+    }
+    .account button:hover{
+        border:2px solid black;
+        border-radius: 10px;
+        cursor:pointer;
+    }
+    .container{
+        display:flex;
+        width:100%;
+        height:100%;
+        flex-direction:row;
+    }
+    .left-container{
+        width:50%;
+        /* height:50%; */
+        display:flex;
+        text-wrap: wrap;
+        flex-direction:column;
+        align-items:flex-start;
+        padding-left:40px;
+        /* border-right:25px; */
+    }
+    .left-container > button{
+        width:150px;
+        height: 50px;
+        margin-top:20px;
+        margin-bottom:105px;
+        margin-right: 250px;
+        border:none;
+        background:none;
+        font-family:"Epilogue", serif;
+        font-weight: 400;
+        font-size: 14px;
+
+    }
+    .left-container > button:hover{
+        border:2px solid black;
+        border-radius:10px;
+        cursor:pointer;
+        color:hsl(0, 0%, 8%);
+    }
+    .left-container > img{
+        width: 50px;
+        height: 50px;
+        display:flex;
+        flex-direction: row;
+        justify-content:space-between;
+    }
+    h1{
+        font-family:"Epilogue", serif;
+        font-weight: 600;
+        font-size: 60px;
+    }
+    p{
+        margin-right:50px;
+        color:hsl(0, 0%, 41%);
+        font-family:"Epilogue", serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height:20px;
+    }
+    .right-container{
+        width:50%;
+        float:right;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        padding-left:50px;
+    }
+   .right-container > img{
+       width: 340px;
+       height: 480px;
+   }
+</style>
+<body>
+    <header>
+            <div class="logo"><h1>snap</h1></div>
+            <div class="navbar">
+                
+                    <div class="features"><button class="features"> Features<img src="icon-arrow-down.svg">
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="todo list"><img  style="padding-right: 5px;justify-content:center;align-items:center;"src="icon-todo.svg">Todo list</a>
+                        <a href="Calendar"><img style="padding-right: 5px;justify-content:center;align-items:center;" src="icon-calendar.svg">Calendar</a>
+                        <a href="Reminders"><img style="padding-right: 5px;justify-content:center;align-items:center;" src="icon-reminders.svg">Reminders</a>
+                        <a href="Planning"><img style="padding-right: 5px;justify-content:center;align-items:center;" src="icon-planning.svg">Planning</a></div>
+                    </div>
+                    <div class="company"><button class="company">Company<img src="icon-arrow-down.svg">
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content-2">
+                        <a href="History">History</a>
+                        <a href="Our Team">Our Team</a>
+                        <a href="Blog">Blog</a>
+                
+                </div>
+                <button>Careers</a></button><button>About</a> </button>
+                </div> 
+            </div>
+            <div class="account">
+                <button class="login">Login</button>
+                <button class="register">Register</button>
+            </div>
+
+    </header>
+    <div class="container"> 
+        <div class="left-container">
+        <div class="content">
+            <h1>Make remote work</h1>
+            <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
+            </div>
+            <button>Learn more</button>
+            <div><img src="client-databiz.svg" alt="databiz">
+                <img src="client-audiophile.svg" alt="audiophile">
+                <img src="client-meet.svg" alt="meet">
+                <img src="client-maker.svg" alt="maker">
+            </div>
+    </div>
+        <div class="right-container">
+            <img src="image-hero-desktop.png" alt="hero">
+        </div>
+    </div>
+</body>
+</html>
