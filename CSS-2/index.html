@@ -12,7 +12,7 @@
     body{
         display:flex;
         flex-direction:column;
-        width: 100vh;
+        width: 100vw;
         height:100vh;
         background-color:hsl(0, 0%, 98%);
         font-family:"Epilogue", serif;
@@ -22,6 +22,7 @@
     }
     header{
         display:flex;
+        width:100vw;
         flex-direction: row;
         justify-content: center;
         align-items:center;
@@ -30,10 +31,11 @@
         font-size: 14px;
 
     }
-    .logo h1{
-        font-size: 30px;
-        margin-left: 20px;
+    .logo{
+        display:flex;
+        
     }
+    
     .navbar{
         display:flex;
         width:70%;
@@ -54,6 +56,9 @@
         flex-direction:row;
         justify-content: center;
         align-items:center;
+        font-family:"Epilogue", serif;
+        font-weight: 400;
+        font-size: 15px;
     }
     .navbar button:hover{
         border:2px solid black;
@@ -65,15 +70,27 @@
         display:flex;
         flex-direction:row;
         float: left;
+
         justify-content:space-between;
         overflow:hidden;
+    }
+    .features > button{
+        font-family:"Epilogue", serif;
+        font-weight: 400;
+        font-size: 15px;
     }
     .company{
         display:flex;
         flex-direction:row;
         float: left;
+        padding-left:5px;
         justify-content:space-between;
         overflow:hidden;
+    }
+    .company > button{
+        font-family:"Epilogue", serif;
+        font-weight: 400;
+        font-size: 15px;
     }
      .dropdown-content{
         display:none;
@@ -91,6 +108,7 @@
         color:black;
         text-align:center;
         font-size: 12px;
+        
     }
     .dropdown-content-2{
         display:none;
@@ -125,9 +143,11 @@
     }
     .account{
         float:right;
-        flex-direction:row;
-        width:30%;
-        margin-left: 220px;
+        flex-direction:row;;
+        width:-100%;
+        overflow:hidden;
+        margin-left: 200px;
+        margin-right: 20px;
         justify-content:space-between
     }
     .account button{
@@ -138,6 +158,9 @@
         flex-direction:row;
         justify-content: center;
         align-items:center;
+        font-family:"Epilogue", serif;
+        font-weight: 400;
+        font-size: 15px;
     }
     .account button:hover{
         border:2px solid black;
@@ -151,20 +174,20 @@
         flex-direction:row;
     }
     .left-container{
-        width:50%;
+        width:50vw;
         /* height:50%; */
         display:flex;
         text-wrap: wrap;
         flex-direction:column;
         align-items:flex-start;
-        padding-left:40px;
+        padding-left:250px;
         /* border-right:25px; */
     }
     .left-container > button{
         width:150px;
         height: 50px;
-        margin-top:20px;
-        margin-bottom:105px;
+        margin-top:80px;
+        margin-bottom:150px;
         margin-right: 250px;
         border:none;
         color:white;
@@ -194,31 +217,45 @@
         font-family:"Epilogue", serif;
         font-weight: 600;
         font-size: 60px;
+        margin-top: 100px;
+    }
+    .paragraph{
+        width:70%;
     }
     p{
         margin-right:50px;
+        padding-top: 30px;
         color:hsl(0, 0%, 41%);
         font-family:"Epilogue", serif;
         font-weight: 400;
-        font-size: 14px;
-        line-height:20px;
+        font-size: 20px;
+        line-height:26px;
+    }
+    .clients{
+        width: 90%;
+        justify-content: space-between;
+        display: flex;
+
     }
     .right-container{
-        width:50%;
+        width:50vw;
         float:right;
         display:flex;
         flex-direction:column;
         align-items:center;
-        padding-left:50px;
+        padding-left:20px;
+        margin-right:180px;
+        padding-top:80px;
     }
    .right-container > img{
-       width: 340px;
-       height: 480px;
+       width: 480px;
+       height: 640px;
+       scale:1;
    }
 </style>
 <body>
     <header>
-            <div class="logo"><h1>snap</h1></div>
+            <div class="logo"><img src="logo.svg"></div>
             <div class="navbar">
                 
                     <div class="features"><button class="features"> Features<img src="icon-arrow-down.svg">
@@ -252,11 +289,13 @@
     <div class="container"> 
         <div class="left-container">
         <div class="content">
-            <h1>Make remote work</h1>
-            <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
+            <h1>Make<br> remote work</h1>
+            <div class="paragraph">
+            <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p></div>
             </div>
             <button>Learn more</button>
-            <div><img src="client-databiz.svg" alt="databiz">
+            <div class ="clients">
+                <img src="client-databiz.svg" alt="databiz">
                 <img src="client-audiophile.svg" alt="audiophile">
                 <img src="client-meet.svg" alt="meet">
                 <img src="client-maker.svg" alt="maker">
