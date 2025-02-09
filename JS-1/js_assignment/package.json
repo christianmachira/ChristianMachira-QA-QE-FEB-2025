@@ -1,12 +1,12 @@
 {
-  "name": "JS-Assignment",
+  "name": "js_assignment",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "strings-assignment.js",
-    "dev": "nodemon /src/strings-assignment.js"
+    "start":"node strings_assignment.js",
+    "dev": "nodemon /src/strings_assignment.js"
   },
   "keywords": [],
   "author": "",
