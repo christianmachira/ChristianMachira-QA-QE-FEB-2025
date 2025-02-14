@@ -97,7 +97,7 @@
         function clearDisplay() {
             document.getElementById('display').value = '';
         }
-        // function to calculate the result
+        // function to calculate the result and display invalid expressions using try catch block
         function calculateResult() {
             try {
                 document.getElementById('display').value = eval(document.getElementById('display').value);

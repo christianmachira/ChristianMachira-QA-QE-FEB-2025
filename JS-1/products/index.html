@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .loading{
+            color: blue;
+            font-style:italic;
+        }
+        .error{
+            color:red;
+        }
+        .products-container{
+            display:flex;
+            flex-direction:column;
+            border:2px solid black;
+            padding:15px;
+            border-radius:10px;
+            margin:15px;
+            max-width:900px;
+        }
+        .product{
+            border:1px solid black;
+            padding:10px;
+            margin:10px;
+            border-radius:5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Products</h1>
+    <div id="loading" class="loading">Loading content...</div>
+    <div id = "error" class="error">Error retrieving information</div>
+    <div id="products-container" class="products-container"></div>
+    <script>
+
+        //store the HTML element in variables using DOM to access the elements
+        const productsContainer = document.getElementById("products-container");
+        const loading = document.getElementById("loading");
+        const error = document.getElementById("error");
+
+        //create an asynchronous fucntion to fetch the data from the server
+        async function fetchData(){
+            //start by hiding the error message and displaying the loading message and clearing any previously displayed products
+            error.style.display = 'none'
+            loading.style.displya = "block"
+            productsContainer.innerHTML = ''
+
+            //fetch the data from the server using a try ctach block to handle any errors
+            try{
+                const response = await fetch('http://localhost:3000/products');
+                if (!response.ok){
+                    throw new Error('Error retrieving information');
+                }
+                const data = await response.json();
+                displayData(data);
+            } catch(err) {
+                error.textContent = `Error: ${Error.message}`
+                error.style.display = 'block';
+            } finally {
+                loading.style.display = 'none';
+            }
+        }
+
+        //create a function to display the data on the page
+        function displayData(data){
+            if (data.length === 0){
+                productsContainer.textContent = '<p>No products available</p>';
+                return;
+            }
+
+            //iterate through each product in the array and create a div element to display the product information
+            data.forEach(product => {
+                const productElement = document.createElement('div')
+                productElement.className = 'product';
+                productElement.innerHTML = `
+                    <h2>${product.name}</h2>
+                    <p>${product.description}</p>
+                    <p>${product.price}</p>
+                `;
+                productsContainer.appendChild(productElement);
+            })
+        }
+
+        //call the function
+        fetchData();
+    </script>
+</body>
+</html>
