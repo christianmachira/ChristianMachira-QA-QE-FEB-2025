@@ -1,0 +1,27 @@
+{
+  "name": "bookLibraryTs",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc --watch",
+    "dev:start": "nodemon --exec \"npx ts-node --esm ./src/index.ts\"",
+    "start": "nodemon index.js",
+    "serve": "vite",
+    "build": "tsc",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.1"
+  },
+  "dependencies": {
+    "json-server": "1.0.0-beta.3",
+    "ts-node": "^10.9.2"
+  }
+}
