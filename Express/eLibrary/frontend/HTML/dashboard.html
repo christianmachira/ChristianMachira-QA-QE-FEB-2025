@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eLibrary Dashboard</title>
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/dashboard.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 id="welcome">Welcome to eLibrary</h1>
+        <p class="fade-in">Select your role to access the dashboard:</p>
+      </header>
+
+      <div id="role-selection">
+        <button onclick="loadUI('admin')">Admin Dashboard</button>
+        <button onclick="loadUI('librarian')">Librarian Dashboard</button>
+        <button onclick="loadUI('borrower')">Borrower Dashboard</button>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 eLibrary. All rights reserved.</p>
+    </footer>
+
+    <!-- <script src="app.js" type="module"></script> -->
+    <script src="typewriter.js"></script>
+  </body>
+</html>

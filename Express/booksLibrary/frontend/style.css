@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 24px;
+}
+#cart{
+    overflow:hidden;
+    height: auto;
+    width: 100px;
+    display:block;
+}
+
+#cart span{
+    position:absolute;
+    top:20px;
+    right:25px;
+    width:50px;
+    height:50px;
+}
+#cart-content{
+    background-color:green;
+    width:30%;
+    height:auto;
+    margin:0 auto;
+    justify-content: center;
+    border-radius:10px;
+    display:none;
+    z-index:1000;
+    position:absolute;
+}
+#cart-list{
+    background-color: white;
+    border-radius: 10px;
+    padding:10px;
+    color:black;
+    width:50%;
+    margin:0 auto;
+}
+.cart-item{
+    margin:15px;
+}
+#total{
+    line-height: 10px;
+    justify-content: center;
+    color:red;
+}
+#cart-content p{
+    justify-content:center;
+    position:relative;
+    align-items:center;
+    font-size: 15px;
+    display:flex;
+}
+#cart-content span{
+    display:flex;
+    top:15px;
+    right:15px;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+    background: #f1f1f1;
+}
+nav button {
+    padding: 8px 12px;
+    cursor: pointer;
+    border: none;
+    background: #ddd;
+    border-radius: 5px;
+}
+nav button:hover {
+    background: #ccc;
+}
+.controls {
+    text-align: center;
+    margin: 20px 0;
+}
+input {
+    padding: 8px;
+    width: 50%;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.book-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    
+}
+.image img {
+    width:240px;
+    height:300px;
+}
+.book-container div{
+    width:80%;
+
+}
+ 
+/* #buynow{
+    width:50px;
+    display:block;
+} */
+.book {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    width:auto;
+}
+button.search-btn {
+    padding: 8px 12px;
+    margin-left: 10px;
+    border: none;
+    background: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button.search-btn:hover {
+    background: #45a049;
+}
+#addtocart{
+    margin-top:10px;
+}

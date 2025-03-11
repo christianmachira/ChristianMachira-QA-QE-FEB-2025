@@ -1,0 +1,15 @@
+/book-management
+│── /backend
+│ ├── server.ts (Express backend)
+│ ├── books.ts (Book data and filtering logic)
+│ ├── routes.ts (Routes for handling API requests)
+│ ├── middleware.ts (CORS & error handling)
+│ ├── package.json
+│ ├── tsconfig.json
+│── /frontend
+│ ├── index.html (UI for book display)
+│ ├── style.css (Basic styles)
+│ ├── index.ts (Handles DOM manipulation)
+│ ├── api.ts (Handles API requests)
+│ ├── bookRenderer.ts (Formats and displays books)
+│── README.md
