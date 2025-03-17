@@ -68,6 +68,33 @@ app.get('/books', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         res.status(500).json({ message: "Internal server error" });
     }
 }));
+//updating a book
+app.patch('/books', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { title, author, genre, year, pages } = req.body;
+    }
+    catch (_a) {
+    }
+}));
+//single search event
+app.get('/books/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { id } = req.params;
+    try {
+        const result = yield db_1.default.query("SELECT * FROM books WHERE id=$1");
+        if (result.rows.length === 0) {
+            res.status(404).json({
+                message: "event not found"
+            });
+            return;
+        }
+        res.status(200).json(result.rows);
+    }
+    catch (error) {
+        res.status(500).json({
+            message: "Internal server error"
+        });
+    }
+}));
 //get the current  directory 
 const _dirname = path_1.default.resolve();
 //synchronously read the file
