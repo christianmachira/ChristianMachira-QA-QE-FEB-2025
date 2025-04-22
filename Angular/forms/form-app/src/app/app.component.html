@@ -1,0 +1,58 @@
+<form #form = 'ngForm' (ngSubmit)="onSubmit(form)">
+  <p>
+    <label for = "firstname">First name</label>
+    <input type="text" id="firstname" name="firstname" required ngModel #firstName="ngModel">
+    <span *ngIf="!firstName?.valid && firstName?.touched">Name is required!</span>
+  </p>
+
+  <p>
+    <label for = "lastname">Last name</label>
+    <input type="text" id="lastname" name="lastname" required ngModel>
+  </p>
+
+  
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email" required email ngModel #email="ngModel">
+    <div *ngIf="!email?.valid && email?.touched">
+      <span *ngIf="email.errors?.['email']">Email is invalid</span>
+      <br>
+      <span *ngIf="email.errors?.['required']">Email is required</span>
+    </div>
+
+  <p>
+    <label for="gender">Gender</label>
+    <input type="radio" value="male" id="gender" name="gender" required ngModel>Male
+    <input type="radio" value="female" id="gender" name="gender" required ngModel>Female
+  </p>
+
+  <p>
+    <label for="isMarried">Married</label>
+    <input type="checkbox" id="isMarried" name="isMarried" required ngModel>
+  </p>
+
+  <p>
+    <label for="country">Country</label>
+    <select name="country" id="country" required ngModel>
+      <option selected = "" value=""></option>
+      <option [ngValue]="c.id" *ngFor="let c of countryList">
+        {{c.name}}
+      </option>
+      </select>
+  </p>
+
+  <div ngModelGroup="address">
+    <p>
+      <label for="city" name="city">City</label>
+      <input type="text" name="city" required ngModel>
+    </p>
+    <p>
+      <label for="street" name="street">Street</label>
+      <input type="text" name="street" required ngModel>
+    </p>
+  </div>
+
+  <p>
+    <button type="submit" [disabled]="!form.valid">Submit</button>
+  </p>
+
+</form>
